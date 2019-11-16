@@ -1,3 +1,4 @@
+### Linear estimation of Fisher information between two distributions samples by Set0=p by N0 and Set1=p by N1 
 function [IF,Signal,Noise]=FisherInformationDecoder(Set0,Set1,B)
 
             m0=mean(Set0,2);
