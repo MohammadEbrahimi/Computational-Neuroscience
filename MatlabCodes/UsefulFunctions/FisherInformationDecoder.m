@@ -1,4 +1,6 @@
-### Linear estimation of Fisher information between two distributions samples by Set0=p by N0 and Set1=p by N1 
+%%% Linear estimation of Binary Fisher information between two validation set samples specified by Set0=p by N0 and Set1=p by N1 
+%%% Through a Linear decoder specified by B = p by 1 
+%%% It returns Fisher Information in IF , And the Signal and Noise part separately 
 function [IF,Signal,Noise]=FisherInformationDecoder(Set0,Set1,B)
 
             m0=mean(Set0,2);
