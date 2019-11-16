@@ -1,3 +1,4 @@
+%% Correlation coefficient matix S for columns in the matrix X
 function [S]=similarity(X)
 S=zeros(size(X,2));
 for i=1:size(X,2)
