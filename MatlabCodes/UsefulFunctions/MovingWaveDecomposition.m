@@ -1,10 +1,9 @@
-function []=MovingWaveDecomposition
+function [A,f,p,Xh]=MovingWaveDecomposition(X)
 %%% Decomposing X into the form of X~ A .* f(t-p) 
-% X=BinningMovie2(DFF(:,:,100:340),2,1);
-% Dim=size(X);
-% A=rand(Dim(1),Dim(2))*0.01;
-% f=rand(1,2*Dim(3))-0.5;
-% p=uint16(rand(Dim(1),Dim(2))*20-10);
+Dim=size(X);
+A=rand(Dim(1),Dim(2))*0.01;
+f=rand(1,2*Dim(3))-0.5;
+p=uint16(rand(Dim(1),Dim(2))*20-10);
 NCore=16;
 tol=0.02;
 maxIter=20;
@@ -60,3 +59,4 @@ end
      end 
  end
  
+end
