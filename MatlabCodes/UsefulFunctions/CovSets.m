@@ -1,3 +1,4 @@
+%%%%Computing average covariance matrix for Set0 of p by n0 and and Set1 of p by n1
 function [S]=CovSets(Set0,Set1)
  
             m0=mean(Set0,2);
