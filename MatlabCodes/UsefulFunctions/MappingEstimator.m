@@ -1,8 +1,4 @@
-MapTimeL364={[100:340],[100:300],[80:290],[1:427]};
-MapTimeL365={[100:300],[100:300],[90:300],[1:420]};
-MapTimeL367={[100:340],[1:280],[90:350],[120,420]};
-MapTimeL368={[100:330],[1:330],[90:370],[120:420]};
-% 
+%%% Decomposing X into the form of X~ A .* f(t-p) 
 % X=BinningMovie2(DFF(:,:,100:340),2,1);
 % Dim=size(X);
 % A=rand(Dim(1),Dim(2))*0.01;
@@ -54,25 +50,12 @@ error=sqrt(sum(sum(sum((X-Xh).^2)))) / sqrt(sum(sum(sum((X).^2))))
 Loss(iter)=error;
 end
 
-%%%Reconstruction
-% Dim=[size(A),length(f)/2];
-% Xh=zeros(Dim);
-% for i=1:Dim(1)
-%     for j=1:Dim(2)
-%         Xh(i,j,:)=(A(i,j)*f(Dim(3)-p(i,j):(2*Dim(3))-p(i,j)-1));
-%     end 
-% end
-% 
-
-
-
-%   smp0=imfilter(p0,G,'same','symmetric');
-% smp90=imfilter(p270,G,'same','symmetric');
-%   smp0=imfilter(smp0,G,'same','symmetric');
-% smp90=imfilter(smp90,G,'same','symmetric');
-% [Gmag90, Gdir90] = imgradient(smp90,'prewitt');
-% [Gmag0, Gdir0] = imgradient(smp0,'prewitt');
-% 
-% map=sind(Gdir0-Gdir90);
-% figure();imagesc(map);colormap('Jet');
-%     
+%%%Reconstruction Xh = A .* f(t-p) 
+ Dim=[size(A),length(f)/2];
+ Xh=zeros(Dim);
+ for i=1:Dim(1)
+     for j=1:Dim(2)
+         Xh(i,j,:)=(A(i,j)*f(Dim(3)-p(i,j):(2*Dim(3))-p(i,j)-1));
+     end 
+ end
+ 
