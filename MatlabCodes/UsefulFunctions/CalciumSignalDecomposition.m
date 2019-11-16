@@ -2,7 +2,7 @@
 %%%outputs S=calcium events N=Noise and B=Baseline
 %%%you can change the mWindow parameter for baseline computation 
 %%%Sadegh Ebrahimi
-function [S,N,B]=CaDecomposition(x)
+function [S,N,B]=CalciumSignalDecomposition(x)
 tol=0.001;
 mWindow=100;
 
