@@ -1,4 +1,4 @@
-### Linear estimation of Fisher information between two distributions samples by Set0=p by N0 and Set1=p by N1 
+%%% Linear estimation of Fisher information (IF) between two distributions samples specified by Set0=p by N0 and Set1=p by N1 
 function [IF]=FisherInformation(Set0,Set1)
  
             m0=mean(Set0,2);
