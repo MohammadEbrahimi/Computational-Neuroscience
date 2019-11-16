@@ -1,9 +1,11 @@
+%%% Calculating regularized CCA where maximizes (X.wxMat)' . (Y.wyMat)
+%%% Inputs X= n x p1   Y=n x p2
+%%% reg -> type of regularization 1 : L1  and 2 : L2 
+%%% L1 regularization parameters  cx > |wx|  and cy > |wy|  (for L2 cx and cy are both 1)
+%%% numCC -> the Number of CCA Modes
+%%% Output wxMat=p1 x numCC  , wyMat=p2 x numCC, rVec=numCC x 1 -> the correlation coefficient at each mode
+ 
 function [wxMat,wyMat,rVec]=SparseCCA(X,Y,cx,cy,reg,numCC)
-% X=dd0(CortexArea==af & NearCortexArea(:,am)==0,:)';
-% Y=dd0(CortexArea==am & NearCortexArea(:,af)==0 ,:)';
-%  cx=par.cxVec{af,am}(indx);
-%  cy=par.cyVec{af,am}(indx);
-%%% X= n x p1   Y=n x p2
 dx=size(X);
 dy=size(Y);
 wxMat=zeros(dx(2),numCC);
