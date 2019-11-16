@@ -1,3 +1,4 @@
+%%%% Soft tresholding of vector w to make its L1 < c
 function [ws,d]=softTreshold(w,c)
 
 for  d=linspace(0,max(w),1000)
