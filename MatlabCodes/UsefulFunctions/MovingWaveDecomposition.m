@@ -1,3 +1,4 @@
+function []=MovingWaveDecomposition
 %%% Decomposing X into the form of X~ A .* f(t-p) 
 % X=BinningMovie2(DFF(:,:,100:340),2,1);
 % Dim=size(X);
