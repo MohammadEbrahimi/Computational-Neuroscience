@@ -1,9 +1,12 @@
-%%% Calculating regularized CCA where maximizes (X.wxMat)' . (Y.wyMat)
+%%% Calculating regularized CCA, maximizing (X.wxMat)' . (Y.wyMat)
 %%% Inputs X= n x p1   Y=n x p2
 %%% reg -> type of regularization 1 : L1  and 2 : L2 
 %%% L1 regularization parameters  cx > |wx|  and cy > |wy|  (for L2 cx and cy are both 1)
 %%% numCC -> the Number of CCA Modes
 %%% Output wxMat=p1 x numCC  , wyMat=p2 x numCC, rVec=numCC x 1 -> the correlation coefficient at each mode
+%%% This code was developed based the the algorithm introduced by D. Witten and R. Tibshirani in the following paper:
+%%% Witten, D. M. & Tibshirani, R. J. Extensions of sparse canonical correlation analysis with
+%%% applications to genomic data. Stat Appl Genet Mol Biol 8, Article28, doi:10.2202/1544-6115.1470 (2009).
  
 function [wxMat,wyMat,rVec]=SparseCCA(X,Y,cx,cy,reg,numCC)
 dx=size(X);
